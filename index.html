@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://play-lh.googleusercontent.com/zlm_ZmZoat0RniINrl3HtpYxQhda9ksJ7pt-WMQ8HQVMdkYwnKTfs6Epah2dXnBJovW7zVhrOWlxWOEUbCh0Bg"
+        type="image/x-icon">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Calculadora de IMC</h1>
+            <p class="subtitle">Índice de Massa Corporal</p>
+
+            <form id="imc-form" onsubmit="return calcularImc(event)">
+                <div class="input-group">
+                    <label for="peso">Peso (kg)</label>
+                    <input type="number" id="peso" placeholder="Ex: 70" step="0.1" min="1">
+                </div>
+
+                <div class="input-group">
+                    <label for="altura">Altura (m)</label>
+                    <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01" min="0.5" max="2.5">
+                </div>
+
+                <button type="submit" id="btn-calcular">Calcular IMC</button>
+            </form>
+
+            <div id="resultado" class="resultado hidden">
+                <div class="resultado-valor">
+                    <span>Seu IMC:</span>
+                    <strong id="imc-valor">0.00</strong>
+                </div>
+                <p id="imc-classificacao" class="classificacao">—</p>
+            </div>
+
+            <div class="tabela-imc">
+                <h2>Tabela de Referência</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IMC</th>
+                            <th>Classificação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Menor que 18.5</td>
+                            <td><span class="badge abaixo">Abaixo do peso</span></td>
+                        </tr>
+                        <tr>
+                            <td>18.5 — 24.9</td>
+                            <td><span class="badge normal">Peso normal</span></td>
+                        </tr>
+                        <tr>
+                            <td>25.0 — 29.9</td>
+                            <td><span class="badge sobrepeso">Sobrepeso</span></td>
+                        </tr>
+                        <tr>
+                            <td>30.0 — 34.9</td>
+                            <td><span class="badge obesidade-1">Obesidade grau I</span></td>
+                        </tr>
+                        <tr>
+                            <td>35.0 — 39.9</td>
+                            <td><span class="badge obesidade-2">Obesidade grau II</span></td>
+                        </tr>
+                        <tr>
+                            <td>Maior que 40.0</td>
+                            <td><span class="badge obesidade-3">Obesidade grau III</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
